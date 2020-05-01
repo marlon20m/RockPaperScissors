@@ -1,38 +1,37 @@
-// ask user to play rock paper scissors
-var wannaplay = prompt('Do you want ot play Rock Paper Scissors? Yes: 1 or No 2');
+// Make a function
+function letsPlay() {
 
-// change input string into int
-wannaplay = parseInt(wannaplay);
+
+// ask user to play rock paper scissors
+var wannaplay = parseInt(prompt('Do you want ot play Rock Paper Scissors? Yes: 1 or No 2'));
 
 // make the game
 if (wannaplay === 1) {
-	// ask user how many time they want to play
-	var turns = prompt('How many times do you want to play?');
-
-	// change string into a number
-	turns = parseInt(turns);
-
+	
 	// array and its objects inside
 	var RPS = [ 'Rock', 'Paper', 'Scissors' ];
-	//           0       1         2
+	//           0       1         2	
+	
 
+	// Ask Later
+	 do {
+
+	// ask user how many time they want to play
+	var turns = parseInt(prompt('How many times do you want to play?'));
+
+ 
 	// for statement for the game
 	for (var i = 0; i < turns; i++) {
+
 		// ask the user to choose
-		var userchoice = prompt('Put an according number: Rock (1) Paper (2) Scissors (3)');
-
-		// change string input to int
-		userchoice = parseInt(userchoice);
-		// -1 to match the index number
-
-		userchoice--;
-		// computer's turn to choose
-		// math.random() -- between 0 and 1
+		var userchoice = parseInt(prompt('Put an according number: Rock (1) Paper (2) Scissors (3)'))--;
+		
+		// Math.random() -- between 0 and 1
 		// *3 --> it going to give you any number between 0 and 2
 		// *10 --> 0 to 9
 		// Math.floor defines range, whole integers
-		// Math.random
-
+		
+		// computer's turn to choose
 		var computerchoice = Math.floor(Math.random() * 3);
 
 		// decision maker
@@ -40,80 +39,47 @@ if (wannaplay === 1) {
 
 		// compare the choices
 		// switch is a shortcut to if else statements
-		var userMessage;
+		var statement ="User's choice " + RPS[userchoice] + " Computer's Choice " + RPS[computerchoice];
+		var winning = statement + " You WIN!!";
+		var losing = statement + " You lose!!";
+		var tie = statement + "It's a tie!!";
+
+
 		switch (decision) {
 			//tie
 
 			case 0:
 				//TODO- convert to template literal to test
-				userMessage =
-					"User's choice " + RPS[userchoice] + " Computer's Choice " + RPS[computerchoice] + " It's a tie!";
-				alert(userMessage);
+				alert(winning);
 				break;
 
 			// user pick 1 behind computer
 			case 1:
-				alert(
-					"User's choice" +
-						' ' +
-						RPS[userchoice] +
-						' ' +
-						"Computer's Choice" +
-						' ' +
-						RPS[computerchoice] +
-						' ' +
-						'You win!'
-				);
+				alert(losing);
 				break;
 
 			case 2:
-				alert(
-					"User's choice" +
-						' ' +
-						RPS[userchoice] +
-						' ' +
-						"Computer's Choice" +
-						' ' +
-						RPS[computerchoice] +
-						' ' +
-						'You lose!'
-				);
+				alert(winning);
 				break;
 
 			case -1:
-				alert(
-					"User's choice" +
-						' ' +
-						RPS[userchoice] +
-						' ' +
-						"Computer's Choice" +
-						' ' +
-						RPS[computerchoice] +
-						' ' +
-						'You lose!'
-				);
+				alert(losing);
 				break;
 
 			case -2:
-				alert(
-					"User's choice" +
-						' ' +
-						RPS[userchoice] +
-						' ' +
-						"Computer's Choice" +
-						' ' +
-						RPS[computerchoice] +
-						' ' +
-						'You Win!'
-				);
+				alert(winning);
 				break;
 		}
 	}
-
+	varplayagain = prompt("Still wanna play?? \^_^/  Yes: (1) or No: (2)");
+	varplayagain = parseInt(varplayagain);
+	
+ }while(varplayagain === 1);
 	// Thank you for playing
 	alert('Thank you for playing.  You are a gamer!');
 }
 else {
 	// Not a gamer
 	alert("You are not a gamer!  I'm sad!");
+}
 }
