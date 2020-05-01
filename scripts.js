@@ -1,6 +1,10 @@
+
 // Make a function
 function letsPlay() {
 
+
+// ask user to play rock paper scissors
+var wannaplay = prompt('Do you want ot play Rock Paper Scissors? Yes: 1 or No 2');
 
 // ask user to play rock paper scissors
 var wannaplay = parseInt(prompt('Do you want ot play Rock Paper Scissors? Yes: 1 or No 2'));
